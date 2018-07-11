@@ -67,4 +67,40 @@ public abstract class CollectionModel {
 	public int getTotalMythicWC() {
 		return naturalMythicWC + vaultMythicWC;
 	}
+	
+	public void add(CollectionModel other) {
+		totalPacksOpened += other.totalPacksOpened;
+		currentVaultProgress += other.currentVaultProgress;
+		totalVaultProgress += other.totalVaultProgress;
+		totalVaultProgressThroughCommons += other.totalVaultProgressThroughCommons;
+		totalVaultProgressThroughUncommons += other.totalVaultProgressThroughUncommons;
+		totalVaultProgressThroughRares += other.totalVaultProgressThroughRares;
+		totalVaultProgressThroughMythics += other.totalVaultProgressThroughMythics;
+		totalVaultProgressThroughPacks += other.totalVaultProgressThroughPacks;
+		naturalCommonWC += other.naturalCommonWC;
+		naturalUncommonWC += other.naturalUncommonWC;
+		naturalRareWC += other.naturalRareWC;
+		naturalMythicWC += other.naturalMythicWC;
+		vaultUncommonWC += other.vaultUncommonWC;
+		vaultRareWC += other.vaultRareWC;
+		vaultMythicWC += other.vaultMythicWC;
+	}
+	
+	public void devide(float number) {
+		totalPacksOpened /= number;
+		currentVaultProgress /= number;
+		totalVaultProgress /= number;
+		totalVaultProgressThroughCommons /= number;
+		totalVaultProgressThroughUncommons /= number;
+		totalVaultProgressThroughRares /= number;
+		totalVaultProgressThroughMythics /= number;
+		totalVaultProgressThroughPacks /= number;
+		naturalCommonWC /= number;
+		naturalUncommonWC /= number;
+		naturalRareWC /= number;
+		naturalMythicWC /= number;
+		vaultUncommonWC /= number;
+		vaultRareWC /= number;
+		vaultMythicWC /= number;
+	}
 }

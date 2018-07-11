@@ -207,4 +207,18 @@ public class NewModel extends CollectionModel{
 	public int getTotalMythicWC() {
 		return naturalMythicWC + vaultMythicWC + wheelMythicWC;
 	}
+	
+	public void add(NewModel other) {
+		super.add(other);
+		wheelUncommonWC += other.wheelUncommonWC;
+		wheelRareWC += other.wheelRareWC;
+		wheelMythicWC += other.wheelMythicWC;
+	}
+	
+	public void devide(float number) {
+		super.devide(number);
+		wheelUncommonWC /= number;
+		wheelRareWC /= number;
+		wheelMythicWC /= number;
+	}
 }
