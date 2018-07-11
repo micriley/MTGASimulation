@@ -18,10 +18,10 @@ public class NewModel extends CollectionModel{
 	public NewModel() {
 		collectionSet = new MTGSet();
 		//TODO: To be changed when details come out 
-		commonWCRate = 0.2f; // 1 in 5
-		uncommonWCRate = 0.2f; // 1 in 5
-		rareWCRate = 0.067f; // 1 in 15
-		mythicWCRate = 0.033f; // 1 in 30
+		commonWCRate = 0.33f; // 1 in 3
+		uncommonWCRate = 0.33f; // 1 in 3
+		rareWCRate = 0.12f; // 1 in 8
+		mythicWCRate = 0.05f; // 1 in 20
 		//TODO: To be changed when details come out
 		vaultProgressPacks = 0f;
 		vaultProgressDupCommons = 0.1f;

@@ -1,7 +1,7 @@
 
 public class OldVsNewLargeTest {
 	public static void main(String[]args) {
-		int totalPacks = 200;
+		int totalPacks = 60;
 		int iterations = 100000;
 		
 		OldModel averageOld = new OldModel();
