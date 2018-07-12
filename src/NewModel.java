@@ -18,10 +18,10 @@ public class NewModel extends CollectionModel implements Cloneable{
 	public NewModel() {
 		collectionSet = new MTGSet();
 		//TODO: To be changed when details come out 
-		commonWCRate = 0.33f; // 1 in 3
-		uncommonWCRate = 0.33f; // 1 in 3
-		rareWCRate = 0.12f; // 1 in 8
-		mythicWCRate = 0.05f; // 1 in 20
+		commonWCRate = 0.2f; // 1 in 5
+		uncommonWCRate = 0.165f; // 1 in 6
+		rareWCRate = 0.033f; // 1 in 30
+		mythicWCRate = 0.033f; // 1 in 30
 		//TODO: To be changed when details come out
 		vaultProgressPacks = 0f;
 		vaultProgressDupCommons = 0.1f;
@@ -29,7 +29,7 @@ public class NewModel extends CollectionModel implements Cloneable{
 		vaultProgressDupRares = 0.5f;
 		vaultProgressDupMythics = 1f;
 		//TODO: To be changed when details come out;
-		maxRarePityTimer = 15;
+		maxRarePityTimer = 30;
 		maxMythicPityTimer = 30;
 	}
 	
