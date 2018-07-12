@@ -93,11 +93,14 @@ public class NewModel extends CollectionModel{
 		if(currentWheel == 3 || currentWheel == 9 || currentWheel == 15) {
 			wheelUncommonWC++;
 		}
-		else if(currentWheel == 6 || currentWheel == 12) {
+		else if(currentWheel == 6 || currentWheel == 12 || currentWheel == 24) {
 			wheelRareWC++;
 		}
 		else if(currentWheel == 18) {
 			wheelMythicWC++;
+		}
+		else if(currentWheel == 30){
+			wheelRareWC++;
 			currentWheel=0;
 		}
 		

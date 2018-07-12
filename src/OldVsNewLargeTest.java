@@ -1,14 +1,14 @@
 
 public class OldVsNewLargeTest {
 	public static void main(String[]args) {
-		int totalPacks = 60;
+		int totalPacks = 130;
 		int iterations = 100000;
 		
 		OldModel averageOld = new OldModel();
 		NewModel averageNew = new NewModel();
 		System.out.println("OLD MODEL");
 		for(int i = 0;i < iterations;i++) {
-			if(i % 500 == 0) {
+			if(i % 10000 == 0) {
 				System.out.println("Old Model iteration " + i);
 			}
 			OldModel oldModel = new OldModel();
@@ -19,7 +19,7 @@ public class OldVsNewLargeTest {
 		}
 		System.out.println("NEW MODEL");
 		for(int i = 0;i < iterations;i++) {
-			if(i % 500 == 0) {
+			if(i % 10000 == 0) {
 				System.out.println("New Model iteration " + i);
 			}
 			NewModel newModel = new NewModel();
