@@ -8,11 +8,11 @@ import java.util.Random;
  * of getting a rare pity WC AND a mythic pity WC at the same time
  *
  */
-public class NewModel extends CollectionModel{
+public class NewModel extends CollectionModel implements Cloneable{
 	private static final Random rand = new Random();
-	private int wheelUncommonWC = 0;
-	private int wheelRareWC = 0;
-	private int wheelMythicWC = 0;
+	private float wheelUncommonWC = 0;
+	private float wheelRareWC = 0;
+	private float wheelMythicWC = 0;
 	private int currentWheel;
 	
 	public NewModel() {
@@ -199,15 +199,15 @@ public class NewModel extends CollectionModel{
 		return sb.toString();
 	}
 	
-	public int getTotalUncommonsWC() {
+	public float getTotalUncommonsWC() {
 		return naturalUncommonWC + vaultUncommonWC + wheelUncommonWC;
 	}
 	
-	public int getTotalRareWC() {
+	public float getTotalRareWC() {
 		return naturalRareWC + vaultRareWC + wheelRareWC;
 	}
 	
-	public int getTotalMythicWC() {
+	public float getTotalMythicWC() {
 		return naturalMythicWC + vaultMythicWC + wheelMythicWC;
 	}
 	
@@ -223,5 +223,10 @@ public class NewModel extends CollectionModel{
 		wheelUncommonWC /= number;
 		wheelRareWC /= number;
 		wheelMythicWC /= number;
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
 	}
 }

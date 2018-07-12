@@ -1,42 +1,54 @@
 
 public class OldVsNewLargeTest {
 	public static void main(String[]args) {
-		int totalPacks = 130;
+		int totalPacks = 200;
 		int iterations = 100000;
 		
-		OldModel averageOld = new OldModel();
-		NewModel averageNew = new NewModel();
+		OldModel totalOld = new OldModel();
+		NewModel totalNew = new NewModel();
+		
 		System.out.println("OLD MODEL");
-		for(int i = 0;i < iterations;i++) {
-			if(i % 10000 == 0) {
-				System.out.println("Old Model iteration " + i);
+		System.out.println(totalOld.printCSVHeader());
+		for(int packs = 5; packs <= totalPacks; packs += 5){
+			totalOld = new OldModel();
+			for(int i = 0;i < iterations;i++) {
+				OldModel oldModel = new OldModel();
+				for(int j = 1;j <= packs;j++) {
+					oldModel.addPack();
+				}
+				totalOld.add(oldModel);
 			}
-			OldModel oldModel = new OldModel();
-			for(int j = 1;j <= totalPacks;j++) {
-				oldModel.addPack();
+			OldModel average = new OldModel();
+			try {
+				average = (OldModel)totalOld.clone();
+			} catch (CloneNotSupportedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			averageOld.add(oldModel);
+			average.devide(iterations);
+			System.out.println(average.printCSV());
 		}
+		
 		System.out.println("NEW MODEL");
-		for(int i = 0;i < iterations;i++) {
-			if(i % 10000 == 0) {
-				System.out.println("New Model iteration " + i);
+		System.out.println(totalNew.printCSVHeader());
+		for(int packs = 5; packs <= packs; packs += 5){
+			totalNew = new NewModel();
+			for(int i = 0;i < iterations;i++) {
+				NewModel newModel = new NewModel();
+				for(int j = 1;j <= packs;j++) {
+					newModel.addPack();
+				}
+				totalNew.add(newModel);
 			}
-			NewModel newModel = new NewModel();
-			for(int j = 1;j <= totalPacks;j++) {
-				newModel.addPack();
+			NewModel average = new NewModel();
+			try {
+				average = (NewModel)totalNew.clone();
+			} catch (CloneNotSupportedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			averageNew.add(newModel);
+			average.devide(iterations);
+			System.out.println(average.printCSV());
 		}
-		
-		averageOld.devide(iterations);
-		averageNew.devide(iterations);
-		
-		System.out.println("Old model averages");
-		System.out.println(averageOld.printCSVHeader());
-		System.out.println(averageOld.printCSV());
-		System.out.println("New model averages");
-		System.out.println(averageNew.printCSVHeader());
-		System.out.println(averageNew.printCSV());
 	}
 }

@@ -8,7 +8,7 @@
  * Allows you to change duplicate rarities, as well as make your own pack addition function
  *
  */
-public abstract class CollectionModel {
+public abstract class CollectionModel implements Cloneable{
 	//Track a collection here
 	protected MTGSet collectionSet;
 	//Counts the number of packs opened
@@ -27,14 +27,14 @@ public abstract class CollectionModel {
 	protected float totalVaultProgressThroughMythics = 0;
 	protected float totalVaultProgressThroughPacks = 0;
 	//Tracks how many natural wildcard drops you obtain
-	protected int naturalCommonWC = 0;
-	protected int naturalUncommonWC = 0;
-	protected int naturalRareWC = 0;
-	protected int naturalMythicWC = 0;
+	protected float naturalCommonWC = 0;
+	protected float naturalUncommonWC = 0;
+	protected float naturalRareWC = 0;
+	protected float naturalMythicWC = 0;
 	//Tracks the number of vault wildcards you obtain
-	protected int vaultUncommonWC = 0;
-	protected int vaultRareWC = 0;
-	protected int vaultMythicWC = 0;
+	protected float vaultUncommonWC = 0;
+	protected float vaultRareWC = 0;
+	protected float vaultMythicWC = 0;
 	//Rates of wildcard drops
 	protected float commonWCRate;
 	protected float uncommonWCRate;
@@ -56,15 +56,15 @@ public abstract class CollectionModel {
 	public abstract String printCSVHeader();
 	public abstract String printCSV();
 	
-	public int getTotalUncommonsWC() {
+	public float getTotalUncommonsWC() {
 		return naturalUncommonWC + vaultUncommonWC;
 	}
 	
-	public int getTotalRareWC() {
+	public float getTotalRareWC() {
 		return naturalRareWC + vaultRareWC;
 	}
 	
-	public int getTotalMythicWC() {
+	public float getTotalMythicWC() {
 		return naturalMythicWC + vaultMythicWC;
 	}
 	
@@ -102,5 +102,12 @@ public abstract class CollectionModel {
 		vaultUncommonWC /= number;
 		vaultRareWC /= number;
 		vaultMythicWC /= number;
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		CollectionModel targetObj = (CollectionModel) super.clone();
+		targetObj.collectionSet = (MTGSet) this.collectionSet.clone();
+		return targetObj;
 	}
 }

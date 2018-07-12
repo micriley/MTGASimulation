@@ -7,7 +7,7 @@ import java.util.Random;
  * Model Class for representing a set of mtg cards we're collecting.
  * Also handles adding random cards to the collection
  */
-public class MTGSet {
+public class MTGSet implements Cloneable{
 	public static final Random rand = new Random();
 	public final int totalCommons;
 	public final int totalUncommons;
@@ -83,5 +83,10 @@ public class MTGSet {
 	public boolean addMythic() {
 		int number = rand.nextInt(totalMythics);
 		return addCard(number, "Mythic");
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
 	}
 }

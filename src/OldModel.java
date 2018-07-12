@@ -8,7 +8,7 @@ import java.util.Random;
  * of getting a rare pity WC AND a mythic pity WC at the same time
  *
  */
-public class OldModel extends CollectionModel{
+public class OldModel extends CollectionModel implements Cloneable{
 	private static final Random rand = new Random();
 	public OldModel() {
 		collectionSet = new MTGSet();
@@ -172,6 +172,11 @@ public class OldModel extends CollectionModel{
 		.append(vaultRareWC + ",")
 		.append(vaultMythicWC);
 		return sb.toString();
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
 	}
 
 }
