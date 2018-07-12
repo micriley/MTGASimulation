@@ -90,7 +90,7 @@ public class NewModel extends CollectionModel implements Cloneable{
 		//Handle the wheel
 		//TODO: To be updated with real values when details are announced
 		currentWheel++;
-		if(currentWheel == 3 || currentWheel == 9 || currentWheel == 15) {
+		if(currentWheel == 3 || currentWheel == 9 || currentWheel == 15 || currentWheel == 21 || currentWheel == 27) {
 			wheelUncommonWC++;
 		}
 		else if(currentWheel == 6 || currentWheel == 12 || currentWheel == 24) {

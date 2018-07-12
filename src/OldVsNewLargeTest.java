@@ -2,7 +2,7 @@
 public class OldVsNewLargeTest {
 	public static void main(String[]args) {
 		int totalPacks = 200;
-		int iterations = 100000;
+		int iterations = 10000;
 		
 		OldModel totalOld = new OldModel();
 		NewModel totalNew = new NewModel();
@@ -31,7 +31,7 @@ public class OldVsNewLargeTest {
 		
 		System.out.println("NEW MODEL");
 		System.out.println(totalNew.printCSVHeader());
-		for(int packs = 5; packs <= packs; packs += 5){
+		for(int packs = 5; packs <= totalPacks; packs += 5){
 			totalNew = new NewModel();
 			for(int i = 0;i < iterations;i++) {
 				NewModel newModel = new NewModel();
