@@ -20,14 +20,14 @@ public class NewModel extends CollectionModel implements Cloneable{
 		//TODO: To be changed when details come out 
 		commonWCRate = 0.2f; // 1 in 5
 		uncommonWCRate = 0.165f; // 1 in 6
-		rareWCRate = 0.033f; // 1 in 30
-		mythicWCRate = 0.033f; // 1 in 30
+		rareWCRate = 0.0416f; // 1 in 24
+		mythicWCRate = 0.0416f; // 1 in 20
 		//TODO: To be changed when details come out
 		vaultProgressPacks = 0f;
 		vaultProgressDupCommons = 0.1f;
 		vaultProgressDupUncommons = 0.3f;
 		vaultProgressDupRares = 0.5f;
-		vaultProgressDupMythics = 1f;
+		vaultProgressDupMythics = 1.1f;
 		//TODO: To be changed when details come out;
 		maxRarePityTimer = 30;
 		maxMythicPityTimer = 30;
@@ -88,7 +88,6 @@ public class NewModel extends CollectionModel implements Cloneable{
 			}
 		}
 		//Handle the wheel
-		//TODO: To be updated with real values when details are announced
 		currentWheel++;
 		if(currentWheel == 3 || currentWheel == 9 || currentWheel == 15 || currentWheel == 21 || currentWheel == 27) {
 			wheelUncommonWC++;

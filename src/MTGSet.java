@@ -85,6 +85,30 @@ public class MTGSet implements Cloneable{
 		return addCard(number, "Mythic");
 	}
 	
+	
+	public boolean collectionOf(String type,int number) {
+		int[] targetRarity = rares;
+		switch(type) {
+		case "common":
+			targetRarity = commons;
+			break;
+		case "uncommon":
+			targetRarity = uncommons;
+			break;
+		case "rare":
+			targetRarity = rares;
+			break;
+		case "mythic":
+			targetRarity = mythics;
+			break;
+		}
+		for(int i = 0; i< targetRarity.length; i++) {
+			if(targetRarity[i] < number)
+				return false;
+		}
+		return true;
+	}
+	
 	@Override
 	public Object clone() throws CloneNotSupportedException{
 		return super.clone();
